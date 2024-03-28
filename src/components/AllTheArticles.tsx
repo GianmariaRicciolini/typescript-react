@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { ArticleInterface } from "../interfaces/Article";
 import SingleArticle from "./SingleArticle";
+import { Container } from "react-bootstrap";
 
 const AllTheArticles: React.FC = () => {
   const [articles, setArticles] = useState<ArticleInterface[]>([]);
@@ -23,11 +24,11 @@ const AllTheArticles: React.FC = () => {
   }, []);
 
   return (
-    <div className="all-articles">
+    <Container fluid>
       {articles.map((article) => (
         <SingleArticle key={article.id} article={article} />
       ))}
-    </div>
+    </Container>
   );
 };
 
